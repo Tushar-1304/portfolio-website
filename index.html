@@ -454,26 +454,6 @@
         themeToggle?.addEventListener('click', toggleTheme);
         themeToggleM?.addEventListener('click', toggleTheme);
 
-        // --- Active link highlight (IntersectionObserver) ---
-        const sections = [...document.querySelectorAll('section[id]')];
-        const links = [...document.querySelectorAll('.navlink')];
-
-        const linkMap = new Map(
-            links.map(a => [a.getAttribute('href').slice(1), a])
-        );
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.id;
-                    links.forEach(l => l.classList.remove('text-accent'));
-                    linkMap.get(id)?.classList.add('text-accent');
-                }
-            });
-        }, { rootMargin: '-30% 0px -60% 0px', threshold: 0.1 });
-
-        sections.forEach(sec => observer.observe(sec));
-
         // --- Pretty skill chips (Tailwind via JS) ---
         document.querySelectorAll('.skill-chip').forEach(chip => {
             chip.className = 'skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition';
@@ -520,7 +500,45 @@
         }
         type();
 
+        // --- Active link highlight (IntersectionObserver) ---
+        const sections = [...document.querySelectorAll('section[id]')];
+
+        // All nav links (desktop + mobile)
+        const allLinks = [...document.querySelectorAll('.navlink')];
+
+        // helper: set active class on both menus
+        function setActiveLink(id) {
+            // clear all first
+            allLinks.forEach(l => l.classList.remove('text-accent', 'underline-accent'));
+            // activate every link that points to #id (desktop & mobile)
+            document.querySelectorAll(`.navlink[href="#${id}"]`).forEach(l => {
+                l.classList.add('text-accent', 'underline-accent');
+            });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveLink(entry.target.id);
+                }
+            });
+        }, {
+            // tune these if you want earlier/later activation
+            rootMargin: '-30% 0px -60% 0px',
+            threshold: 0.1
+        });
+
+        sections.forEach(sec => observer.observe(sec));
+
+        // (optional) also set active on click for snappy feedback
+        allLinks.forEach(l => {
+            l.addEventListener('click', () => {
+                const id = l.getAttribute('href')?.slice(1);
+                if (id) setActiveLink(id);
+            });
+        });
     </script>
+
 </body>
 
 </html>
