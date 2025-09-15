@@ -1,291 +1,498 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth" data-theme="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tushar Maheshwari • Portfolio</title>
+
+    <!-- Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CDN (standalone) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap Icons (just the icons, no CSS conflicts) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <script>
+        /* Tailwind config: custom colors & font */
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#b74b4b',
+                        cardDark: '#17181b',
+                        bgDark: '#0f0f10',
+                        textDark: '#f2f3f5',
+                        mutedDark: '#a7a7ad',
+                    },
+                    boxShadow: {
+                        soft: '0 10px 30px rgba(0,0,0,.15)',
+                        softDark: '0 10px 30px rgba(0,0,0,.35)',
+                    },
+                    borderRadius: {
+                        xl2: '18px',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700;900&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --bg-color: #fff;
-            --text-color: #000;
-        }
-
-        body[data-theme="dark"] {
-            --bg-color: #121212;
-            --text-color: #f0f0f0;
-        }
-
-        body {
-            width: 100%;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        nav {
-            width: 100%;
-            height: 10vh;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: var(--bg-color);
-            z-index: 1000;
-        }
-
-        span {
-            color: #b74b4b;
-            text-shadow: 0 0 3px #b74b4b;
-        }
-
-        nav .link ul {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        nav .link ul li a {
-            position: relative;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        nav .link ul li a::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -4px;
-            height: 3.5px;
-            border-radius: 20px;
-            background-color: #b74b4b;
-            width: 100%;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        nav .link ul li a:hover::before {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        .theme-toggle,
-        .menu-toggle {
-            cursor: pointer;
-        }
-
-        .theme-toggle:hover,
-        .menu-toggle:hover {
-            color: #b74b4b;
-        }
-
-        .main {
-            width: 100%;
-            min-height: 90vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            padding: 1rem;
-            padding-top: 12vh;
-        }
-
-        .main .men {
-            width: 100%;
-            max-width: 300px;
-            transition: transform 1s ease;
-            transition: filter 0.3s, transform 0.3s;
-        }
-
-        .main .men:hover {
-            transform: scale(1.08);
-            /* filter: drop-shadow(0px 0px 7px #b74b4b); */
-        }
-
-        .main-detail p {
-            max-width: 500px;
-        }
-
-        .main .btn {
-            padding: 8px 20px;
-            border-radius: 30px;
-            border: 2px solid var(--text-color);
-            background-color: transparent;
-            color: var(--text-color);
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .main .btn:hover {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-        }
-
-        .social a {
-            font-size: 1.8rem;
-            margin: 0 10px;
-            color: var(--text-color);
-            transition: color 0.3s;
-        }
-
-        .social a:hover {
-            color: #b74b4b;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: var(--bg-color);
-            border-top: 1px solid #ccc;
-            margin-top: 2rem;
-        }
-
-        section {
-            transform: translateY(50px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            min-height: 50vh;
-            padding: 2rem;
-        }
-
-        /* Mobile Menu */
-        .menu-toggle {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-
-            .main .main-detail {
-                text-align: center;
-            }
-
-            nav .link {
-                position: absolute;
-                top: 9vh;
-                left: 0;
-                width: 100%;
-                background-color: var(--bg-color);
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                padding: 1rem 0;
-            }
-
-            nav .link.show {
-                display: flex;
-            }
-
-            nav .link ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .menu-toggle {
-                transform: scale(1.5);
-                display: block;
-            }
+        /* Small utilities not worth tailwind classes */
+        .underline-accent {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            text-decoration-thickness: 3px;
+            text-decoration-color: #b74b4b;
         }
     </style>
 </head>
 
-<body data-theme="dark">
-    <nav>
-        <div class="logo">
-            <h2 class="m-0"><span>Tushar</span> Maheshwari</h2>
-        </div>
+<body class="font-poppins bg-white text-black dark:bg-bgDark dark:text-textDark transition-colors duration-300">
 
-        <!-- <div class="link">
-            <ul class="m-0 p-0">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <!-- Navbar -->
+    <header
+        class="fixed top-0 inset-x-0 z-50 bg-white/80 dark:bg-bgDark/80 backdrop-blur border-b border-black/10 dark:border-white/10">
+        <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="#home" class="font-bold text-lg">
+                <span class="text-accent drop-shadow-[0_0_3px_rgba(183,75,75,1)]">Tushar</span> Maheshwari
+            </a>
+
+            <button id="menuBtn" class="md:hidden text-2xl" aria-label="Menu">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <ul id="navLinks" class="hidden md:flex items-center gap-6">
+                <li><a class="navlink relative" href="#home">Home</a></li>
+                <li><a class="navlink relative" href="#about">About</a></li>
+                <li><a class="navlink relative" href="#skills">Skills</a></li>
+                <li><a class="navlink relative" href="#experience">Experience</a></li>
+                <li><a class="navlink relative" href="#projects">Projects</a></li>
+                <li><a class="navlink relative" href="#education">Education</a></li>
+                <li><a class="navlink relative" href="#contact">Contact</a></li>
+                <li>
+                    <button id="themeToggle"
+                        class="w-9 h-9 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition"
+                        aria-label="Toggle theme">
+                        <i id="themeIcon" class="bi bi-moon"></i>
+                    </button>
+                </li>
             </ul>
-        </div> -->
+        </nav>
 
-        <div class="d-flex align-items-center">
-            <!-- <div class="menu-toggle me-3">
-                <i class="bi bi-list" id="menuIcon"></i>
-            </div> -->
-            <div class="theme-toggle">
-                <i class="bi bi-moon" id="themeIcon"></i>
+        <!-- Mobile menu -->
+        <div id="mobileMenu"
+            class="md:hidden hidden border-t border-black/10 dark:border-white/10 bg-white/90 dark:bg-bgDark/90 backdrop-blur">
+            <ul class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3">
+                <li><a class="navlink block" href="#home">Home</a></li>
+                <li><a class="navlink block" href="#about">About</a></li>
+                <li><a class="navlink block" href="#skills">Skills</a></li>
+                <li><a class="navlink block" href="#experience">Experience</a></li>
+                <li><a class="navlink block" href="#projects">Projects</a></li>
+                <li><a class="navlink block" href="#education">Education</a></li>
+                <li><a class="navlink block" href="#contact">Contact</a></li>
+                <li>
+                    <button id="themeToggleM"
+                        class="w-10 h-10 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/10 transition"
+                        aria-label="Toggle theme (mobile)">
+                        <i id="themeIconM" class="bi bi-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="pt-20">
+
+        <!-- Hero -->
+        <section id="home" class="pt-[84px] min-h-[85vh] flex items-center">
+            <div class="max-w-6xl mx-auto px-4 w-full grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center">
+                <div class="w-full flex items-center justify-center">
+                    <img src="./main3.png" alt="main-img"
+                        class="max-w-[300px] w-full transition-transform duration-300 hover:scale-105 drop-shadow md:max-w-sm" />
+                </div>
+
+                <div class="w-full space-y-4 md:space-y-6">
+                    <h1 class="text-3xl sm:text-4xl font-bold">
+                        Hi, It's <span class="text-accent drop-shadow-sm">Tushar</span>
+                    </h1>
+
+                    <h3 class="text-xl sm:text-2xl">
+                        I'm a <span id="typing" class="text-accent font-semibold"></span>
+                    </h3>
+
+                    <p class="text-base leading-relaxed text-black/80 dark:text-mutedDark">
+                        Full-stack developer with experience building scalable web apps using Node.js, Express.js, and
+                        MongoDB.
+                        Adept at designing end-to-end systems, shifting legacy apps to microservices, and improving team
+                        productivity
+                        through modular architecture. Proven track record of delivering user-centric solutions that
+                        boost performance
+                        and efficiency.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3">
+                        <a href="./Tushar_new.pdf" download
+                            class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-white bg-accent shadow-[0_6px_18px_rgba(183,75,75,.35)] hover:brightness-95 transition">
+                            Download CV <i class="bi bi-download"></i>
+                        </a>
+                        <a href="#projects"
+                            class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-accent text-accent hover:bg-accent/10 transition">
+                            See Projects <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="flex gap-3 mt-4">
+                        <a class="w-11 h-11 flex items-center justify-center rounded-full border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/10 transition"
+                            href="mailto:tushar.mahi1304@gmail.com" aria-label="Email"><i
+                                class="bi bi-envelope-at-fill"></i></a>
+                        <a class="w-11 h-11 flex items-center justify-center rounded-full border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/10 transition"
+                            href="tel:+917060471819" aria-label="Phone"><i
+                                class="bi bi-telephone-outbound-fill"></i></a>
+                        <a class="w-11 h-11 flex items-center justify-center rounded-full border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/10 transition"
+                            href="https://in.linkedin.com/in/tushar-maheshwari-56a2062ab" target="_blank"
+                            rel="noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
+        </section>
+        <!-- About -->
+        <section id="about" class="py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-2">About</h2>
+                <p class="text-black/70 dark:text-mutedDark mb-8">
+                    Developer by craft, problem-solver by habit. I enjoy translating business problems into elegant,
+                    reliable
+                    software. My happy place is clean APIs, predictable data models, and thoughtful UX.
+                </p>
 
-    <section id="home" class="main">
-        <div class="img-term">
-            <img class="men" src="./main3.png" alt="main-img">
-        </div>
-        <div class="main-detail mb-4">
-            <h1>Hi, It's <span>Tushar</span></h1>
-            <h3 class="typing-text">I'm a <span id="typing"></span></h3>
-            <p>Full-stack developer with experience building scalable web apps using Node.js, Express.js, and MongoDB.
-                Adept at designing end-to-end systems, shifting legacy apps to microservices, and improving team
-                productivity through modular architecture. Proven track
-                record of delivering user-centric solutions that boost performance and efficiency.</p>
-            <button class="btn mb-3" onclick="downloadPDF()">Download CV</button>
-            <div class="social">
-                <a href="mailto:tushar.mahi1304@gmail.com" target="_blank"><i class="bi bi-envelope-at-fill"></i></a>
-                <a href="tel:+917060471819" target="_blank"><i class="bi bi-telephone-outbound-fill"></i></a>
-                <a href="https://in.linkedin.com/in/tushar-maheshwari-56a2062ab" target="_blank"><i class="bi bi-linkedin"></i></a>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div
+                        class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
+                        <h3 class="font-semibold mb-2"><i class="bi bi-diagram-3 me-2"></i>What I do</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-black/80 dark:text-textDark/90">
+                            <li>Design REST APIs and modular backends with Node.js & Express</li>
+                            <li>Model data & optimize queries on MongoDB/MySQL</li>
+                            <li>Build responsive UIs with Tailwind/Bootstrap/React</li>
+                            <li>Automate & integrate workflows (EJS, Postman, AWS S3)</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
+                        <h3 class="font-semibold mb-2"><i class="bi bi-graph-up-arrow me-2"></i>Impact</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-black/80 dark:text-textDark/90">
+                            <li>Reduced internal resolution time with structured discussions & voting</li>
+                            <li>Improved retention via streamlined course delivery</li>
+                            <li>Accelerated deployment by auditing content workflows</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div><span>© 2025 Tushar Maheshwari.</span> All rights reserved.</div>
+        <!-- Skills -->
+        <section id="skills" class="py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-2">Skills</h2>
+                <p class="text-black/70 dark:text-mutedDark mb-6">A practical stack I use to deliver stable,
+                    maintainable software.</p>
+
+                <div class="flex flex-wrap gap-2">
+                    <!-- chips -->
+                    <!-- Languages & DB -->
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" width="18"> JavaScript
+                    </span>
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" width="18"> Python
+                    </span>
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/c/A8B9CC" alt="C" width="18"> C Programming
+                    </span>
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB" width="18"> MongoDB
+                    </span>
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL" width="18"> MySQL
+                    </span>
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis" width="18"> Redis
+                    </span>
+
+                    <!-- Frameworks -->
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" width="18"> Node.js
+                    </span>
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/express/000000" alt="Express" width="18"> Express
+                    </span>
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/bootstrap/7952B3" alt="Bootstrap" width="18"> Bootstrap
+                    </span>
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind" width="18"> Tailwind
+                    </span>
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" width="18"> React
+                    </span>
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/ejs/B4CA65" alt="EJS" width="18"> EJS
+                    </span>
+
+                    <!-- Tools -->
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" width="18"> Git & GitHub
+                    </span>
+                    <span class="skill-chip">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
+                            alt="AWS" width="18"> AWS & S3
+                    </span>
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman" width="18"> Postman
+                    </span>
+                    <span class="skill-chip">
+                        <img src="https://cdn.simpleicons.org/json/000000" alt="JSON" width="18"> REST & JSON
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8">Experience</h2>
+
+                <div class="relative pl-6">
+                    <span class="absolute left-1 top-0 bottom-0 w-[2px] bg-black/10 dark:bg-white/10"></span>
+
+                    <article class="t-item">
+                        <h3 class="font-semibold">Full-Stack Developer • Telecom Network Solutions Pvt. Ltd.</h3>
+                        <p class="text-sm text-black/70 dark:text-mutedDark">Nov 2023 – Present • Noida, U.P.</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>Built discussion forum (Express + MongoDB, EJS/JS/CSS) with threads/votes to reduce
+                                resolution time.</li>
+                            <li>Created LMS (Node/Express/MongoDB + Tailwind/Bootstrap) with courses, notes, cart &
+                                content APIs.</li>
+                            <li>Led content workflow audits; driving SQL → MongoDB migration for scalability.</li>
+                        </ul>
+                    </article>
+
+                    <article class="t-item">
+                        <h3 class="font-semibold">Trainee Engineer • SequelString AI Pvt. Ltd.</h3>
+                        <p class="text-sm text-black/70 dark:text-mutedDark">Jan 2023 – Jun 2023 • New Delhi</p>
+                        <p class="mt-2">Automated scraping with Python, BeautifulSoup, Selenium & Requests to speed up
+                            data collection.</p>
+                    </article>
+
+                    <article class="t-item">
+                        <h3 class="font-semibold">Intern • SequelString AI Pvt. Ltd.</h3>
+                        <p class="text-sm text-black/70 dark:text-mutedDark">Nov 2022 – Dec 2022 • New Delhi</p>
+                        <p class="mt-2">Hands-on with Python libs for scraping and workflow automation.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8">Projects</h2>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div
+                        class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
+                        <div class="flex items-start justify-between gap-4">
+                            <h3 class="font-semibold">Discussion Forum Platform</h3>
+                            <span class="text-xs px-2 py-1 border border-accent text-accent rounded-full">Node • Express
+                                • MongoDB • EJS</span>
+                        </div>
+                        <p class="text-black/70 dark:text-mutedDark mt-2">Threaded discussions, votes, and structured
+                            Q&A to speed up knowledge sharing.</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>Role-based permissions</li>
+                            <li>Pagination & search</li>
+                            <li>Clean, responsive UI</li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
+                        <div class="flex items-start justify-between gap-4">
+                            <h3 class="font-semibold">Learning Management System</h3>
+                            <span class="text-xs px-2 py-1 border border-accent text-accent rounded-full">Node • Express
+                                • MongoDB • Tailwind</span>
+                        </div>
+                        <p class="text-black/70 dark:text-mutedDark mt-2">End-to-end LMS with courses, tutorials, notes,
+                            cart, and real-time content APIs.</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>RESTful services</li>
+                            <li>Cart & session flows</li>
+                            <li>Analytics-ready structure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-6">Education & Certificates</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div
+                        class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
+                        <h3 class="font-semibold"><i class="bi bi-mortarboard me-2"></i>Master of Computer Application
+                            (MCA) — 7.0 CGPA</h3>
+                        <p class="text-black/70 dark:text-mutedDark text-sm mb-3">G.L. Bajaj Institute of Technology &
+                            Management • 2021–2023</p>
+                        <h3 class="font-semibold"><i class="bi bi-mortarboard me-2"></i>Bachelor of Computer Application
+                            (BCA) — 7.0 CGPA</h3>
+                        <p class="text-black/70 dark:text-mutedDark text-sm">Institute of Technology & Science •
+                            2018–2021</p>
+                    </div>
+                    <div
+                        class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
+                        <h3 class="font-semibold"><i class="bi bi-patch-check me-2"></i>Full Stack Web Development </h3>
+                        <p class="text-black/70 dark:text-mutedDark text-sm mb-3">Apna College • May 2024</p>
+                        <h3 class="font-semibold"><i class="bi bi-patch-check me-2"></i>Crash Course on Python</h3>
+                        <p class="text-black/70 dark:text-mutedDark text-sm">Google/Coursera • Jan 2023</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-6">Contact</h2>
+                <p class="text-black/70 dark:text-mutedDark mb-6">Open to full-time roles and interesting freelance
+                    work. Let’s talk!</p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div
+                        class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
+                        <h3 class="font-semibold"><i class="bi bi-person-lines-fill me-2"></i>Reach me</h3>
+                        <ul class="mt-3 space-y-2">
+                            <li><i class="bi bi-envelope text-accent"></i> <a class="underline-accent"
+                                    href="mailto:tushar.mahi1304@gmail.com">tushar.mahi1304@gmail.com</a></li>
+                            <li><i class="bi bi-telephone text-accent"></i> <a class="underline-accent"
+                                    href="tel:+917060471819">+91 7060471819</a></li>
+                            <li><i class="bi bi-linkedin text-accent"></i> <a class="underline-accent"
+                                    href="https://in.linkedin.com/in/tushar-maheshwari-56a2062ab" target="_blank"
+                                    rel="noreferrer">LinkedIn</a></li>
+                        </ul>
+                    </div>
+
+                    <div
+                        class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
+                        <h3 class="font-semibold"><i class="bi bi-send-check me-2"></i>Prefer email?</h3>
+                        <p class="text-black/70 dark:text-mutedDark mt-2">Click to open your mail client with a
+                            pre-filled subject.</p>
+                        <a class="inline-flex items-center gap-2 px-5 py-2 mt-3 rounded-full text-white bg-accent hover:brightness-95 transition"
+                            href="mailto:tushar.mahi1304@gmail.com?subject=Opportunity%20for%20Tushar%20Maheshwari">
+                            Email Me <i class="bi bi-envelope-open"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-6 border-t border-black/10 dark:border-white/10 text-black/60 dark:text-mutedDark">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">
+            <div>© <span id="year"></span> <span class="text-accent">Tushar</span> Maheshwari. All rights reserved.
+            </div>
+            <div>Made by Tushar with <i class="bi bi-heart-fill text-accent"></i></div>
+        </div>
     </footer>
 
     <script>
-        // toggle dark/light mode
-        const themeToggle = document.getElementById('themeIcon');
-        themeToggle.addEventListener('click', () => {
-            const body = document.body;
-            const currentTheme = body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', newTheme);
-            themeToggle.classList.toggle('bi-moon');
-            themeToggle.classList.toggle('bi-sun');
+        // --- Year ---
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- Mobile menu toggle ---
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // --- Theme toggle (persisted) ---
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        const themeToggleM = document.getElementById('themeToggleM');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeIconM = document.getElementById('themeIconM');
+
+        function setIcon() {
+            const dark = root.classList.contains('dark');
+            (dark ? [themeIcon, themeIconM] : [themeIcon, themeIconM])
+                .forEach(ic => { if (!ic) return; ic.classList.toggle('bi-moon', dark); ic.classList.toggle('bi-sun', !dark); });
+        }
+
+        (function initTheme() {
+            const saved = localStorage.getItem('theme');
+            if (saved) {
+                root.classList.toggle('dark', saved === 'dark');
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                root.classList.add('dark');
+            }
+            setIcon();
+        })();
+
+        function toggleTheme() {
+            root.classList.toggle('dark');
+            localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+            setIcon();
+        }
+        themeToggle?.addEventListener('click', toggleTheme);
+        themeToggleM?.addEventListener('click', toggleTheme);
+
+        // --- Active link highlight (IntersectionObserver) ---
+        const sections = [...document.querySelectorAll('section[id]')];
+        const links = [...document.querySelectorAll('.navlink')];
+
+        const linkMap = new Map(
+            links.map(a => [a.getAttribute('href').slice(1), a])
+        );
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    links.forEach(l => l.classList.remove('text-accent'));
+                    linkMap.get(id)?.classList.add('text-accent');
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px', threshold: 0.1 });
+
+        sections.forEach(sec => observer.observe(sec));
+
+        // --- Pretty skill chips (Tailwind via JS) ---
+        document.querySelectorAll('.skill-chip').forEach(chip => {
+            chip.className = 'skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition';
         });
 
-        // Download pdf
-        function downloadPDF() {
-            const link = document.createElement('a');
-            link.href = './Tushar_new.pdf';
-            link.download = 'Tushar_new.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-        /*
-        const menuIcon = document.getElementById('menuIcon');
-        const menu = document.querySelector('.link');
-        menuIcon.addEventListener('click', () => {
-            menu.classList.toggle('show');
-            menuIcon.classList.toggle('bi-list');
-            menuIcon.classList.toggle('bi-x');
+        // --- Timeline dots ---
+        document.querySelectorAll('.t-item').forEach((item, idx) => {
+            item.classList.add('relative', 'pl-6', 'pb-6', 'before:content-[""]', 'before:absolute', 'before:left-[-27px]', 'before:top-1', 'before:w-4', 'before:h-4', 'before:rounded-full', 'before:ring-4', 'before:ring-[rgba(183,75,75,.25)]', 'before:bg-accent');
+            if (idx === document.querySelectorAll('.t-item').length - 1) item.classList.add('pb-0');
         });
-        */
-        
+        document.querySelectorAll('.navlink').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.classList.add('underline-accent');
+            });
+            link.addEventListener('mouseleave', () => {
+                link.classList.remove('underline-accent');
+            });
+        });
+
         // Typing effect
         const typingSpan = document.getElementById('typing');
         const roles = ["Developer", "Tech Enthusiast", "Problem Solver", "Engineer"];
@@ -299,7 +506,7 @@
                 typingSpan.textContent = currentRole.slice(0, charIndex++);
                 if (charIndex > currentRole.length) {
                     typingForward = false;
-                    setTimeout(type, 1000);
+                    setTimeout(type, 900);
                     return;
                 }
             } else {
@@ -309,9 +516,10 @@
                     roleIndex = (roleIndex + 1) % roles.length;
                 }
             }
-            setTimeout(type, typingForward ? 150 : 100);
+            setTimeout(type, typingForward ? 140 : 90);
         }
         type();
+
     </script>
 </body>
 
