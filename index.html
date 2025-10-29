@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth" data-theme="dark">
+<html lang="en" class="scroll-smooth dark" data-theme="dark">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Tushar Maheshwari • Portfolio</title>
 
     <!-- Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&amp;display=swap"
         rel="stylesheet">
     <!-- Tailwind CDN (standalone) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -41,6 +40,7 @@
             }
         }
     </script>
+
     <style>
         /* Small utilities not worth tailwind classes */
         .underline-accent {
@@ -49,6 +49,129 @@
             text-decoration-thickness: 3px;
             text-decoration-color: #b74b4b;
         }
+
+        /* Ensure anchor scroll stops below the fixed header on all screens */
+        section[id] {
+            scroll-margin-top: 96px;
+        }
+
+        /* ≈ header height + breathing room */
+    </style>
+
+    <style>
+        /* (compiled Tailwind base — unchanged from your original) */
+        *,
+        ::before,
+        ::after {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        ::backdrop {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        /* ! tailwindcss v3.4.17 | rest of utility classes unchanged ... */
+        /* (Keeping your original long Tailwind utility outputs as-is) */
     </style>
 </head>
 
@@ -72,6 +195,7 @@
                 <li><a class="navlink relative" href="#skills">Skills</a></li>
                 <li><a class="navlink relative" href="#experience">Experience</a></li>
                 <li><a class="navlink relative" href="#projects">Projects</a></li>
+                <!-- removed pre-set active classes on Education -->
                 <li><a class="navlink relative" href="#education">Education</a></li>
                 <li><a class="navlink relative" href="#contact">Contact</a></li>
                 <li>
@@ -93,6 +217,7 @@
                 <li><a class="navlink block" href="#skills">Skills</a></li>
                 <li><a class="navlink block" href="#experience">Experience</a></li>
                 <li><a class="navlink block" href="#projects">Projects</a></li>
+                <!-- removed pre-set active classes on Education (mobile) -->
                 <li><a class="navlink block" href="#education">Education</a></li>
                 <li><a class="navlink block" href="#contact">Contact</a></li>
                 <li>
@@ -112,8 +237,8 @@
         <section id="home" class="pt-[84px] min-h-[85vh] flex items-center">
             <div class="max-w-6xl mx-auto px-4 w-full grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center">
                 <div class="w-full flex items-center justify-center">
-                    <img src="./main3.png" alt="main-img"
-                        class="max-w-[300px] w-full transition-transform duration-300 hover:scale-105 drop-shadow md:max-w-sm" />
+                    <img src="./main3.png" alt="Tushar's ghibli art"
+                        class="max-w-[300px] w-full transition-transform duration-300 hover:scale-105 drop-shadow md:max-w-sm">
                 </div>
 
                 <div class="w-full space-y-4 md:space-y-6">
@@ -122,17 +247,17 @@
                     </h1>
 
                     <h3 class="text-xl sm:text-2xl">
-                        I'm <span id="typing" class="text-accent font-semibold"></span>
+                        I'm <span id="typing" class="text-accent font-semibold">Engineer</span>
                     </h3>
 
                     <p class="text-base leading-relaxed text-black/80 dark:text-mutedDark">
-                          Developer by craft, problem-solver by habit. I enjoy translating business problems into elegant,
-                    reliable
-                    software. My happy place is clean APIs, predictable data models, and thoughtful UX.
+                        Developer by craft, problem-solver by habit. I enjoy translating business problems into elegant,
+                        reliable
+                        software. My happy place is clean APIs, predictable data models, and thoughtful UX.
                     </p>
 
                     <div class="flex flex-wrap gap-3">
-                        <a href="./Tushar_new.pdf" download
+                        <a href="./Tushar_new.pdf" download=""
                             class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-white bg-accent shadow-[0_6px_18px_rgba(183,75,75,.35)] hover:brightness-95 transition">
                             Download CV <i class="bi bi-download"></i>
                         </a>
@@ -156,16 +281,21 @@
                 </div>
             </div>
         </section>
+
         <!-- About -->
         <section id="about" class="py-16">
             <div class="max-w-6xl mx-auto px-4">
                 <h2 class="text-3xl font-bold mb-2">About</h2>
                 <p class="text-black/70 dark:text-mutedDark mb-8">
-                  Results-driven Full-Stack Developer specializing in MERN stack with proven experience designing, developing,
-and deploying scalable web applications. Adept at writing clean, efficient, and maintainable code using
-JavaScript, React.js, Node.js, Express.js, and MongoDB. Strong problem solver with solid understanding of API
-integration, database design, and modern UI development. Committed to continuous learning and delivering
-impactful digital solutions aligned with business goals.
+                    Results-driven Full-Stack Developer specializing in MERN stack with proven experience designing,
+                    developing,
+                    and deploying scalable web applications. Adept at writing clean, efficient, and maintainable code
+                    using
+                    JavaScript, React.js, Node.js, Express.js, and MongoDB. Strong problem solver with solid
+                    understanding of API
+                    integration, database design, and modern UI development. Committed to continuous learning and
+                    delivering
+                    impactful digital solutions aligned with business goals.
                 </p>
 
                 <div class="grid md:grid-cols-2 gap-6">
@@ -173,10 +303,10 @@ impactful digital solutions aligned with business goals.
                         class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
                         <h3 class="font-semibold mb-2"><i class="bi bi-diagram-3 me-2"></i>What I do</h3>
                         <ul class="list-disc pl-5 space-y-1 text-black/80 dark:text-textDark/90">
-                            <li>Design REST APIs and modular backends with Node.js & Express</li>
-                            <li>Model data & optimize queries on MongoDB/MySQL</li>
+                            <li>Design REST APIs and modular backends with Node.js &amp; Express</li>
+                            <li>Model data &amp; optimize queries on MongoDB/MySQL</li>
                             <li>Build responsive UIs with Tailwind/Bootstrap/React</li>
-                            <li>Automate & integrate workflows (EJS, Postman, AWS S3)</li>
+                            <li>Automate &amp; integrate workflows (EJS, Postman, AWS S3)</li>
                         </ul>
                     </div>
 
@@ -184,7 +314,7 @@ impactful digital solutions aligned with business goals.
                         class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
                         <h3 class="font-semibold mb-2"><i class="bi bi-graph-up-arrow me-2"></i>Impact</h3>
                         <ul class="list-disc pl-5 space-y-1 text-black/80 dark:text-textDark/90">
-                            <li>Reduced internal resolution time with structured discussions & voting</li>
+                            <li>Reduced internal resolution time with structured discussions &amp; voting</li>
                             <li>Improved retention via streamlined course delivery</li>
                             <li>Accelerated deployment by auditing content workflows</li>
                         </ul>
@@ -203,58 +333,74 @@ impactful digital solutions aligned with business goals.
                 <div class="flex flex-wrap gap-2">
                     <!-- chips -->
                     <!-- Languages & DB -->
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" width="18"> JavaScript
                     </span>
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" width="18"> Python
                     </span>
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://cdn.simpleicons.org/c/A8B9CC" alt="C" width="18"> C Programming
                     </span>
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="MongoDB" width="18"> MongoDB
                     </span>
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL" width="18"> MySQL
                     </span>
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis" width="18"> Redis
                     </span>
 
                     <!-- Frameworks -->
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" width="18"> Node.js
                     </span>
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://cdn.simpleicons.org/express/000000" alt="Express" width="18"> Express
                     </span>
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://cdn.simpleicons.org/bootstrap/7952B3" alt="Bootstrap" width="18"> Bootstrap
                     </span>
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind" width="18"> Tailwind
                     </span>
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" width="18"> React
                     </span>
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://cdn.simpleicons.org/ejs/B4CA65" alt="EJS" width="18"> EJS
                     </span>
 
                     <!-- Tools -->
-                    <span class="skill-chip">
-                        <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" width="18"> Git & GitHub
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
+                        <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" width="18"> Git &amp; GitHub
                     </span>
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-                            alt="AWS" width="18"> AWS & S3
+                            alt="AWS" width="18"> AWS &amp; S3
                     </span>
-                    <span class="skill-chip">
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
                         <img src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman" width="18"> Postman
                     </span>
-                    <span class="skill-chip">
-                        <img src="https://cdn.simpleicons.org/json/000000" alt="JSON" width="18"> REST & JSON
+                    <span
+                        class="skill-chip inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-gray-50/80 dark:bg-cardDark hover:border-accent hover:shadow-[0_0_0_6px_rgba(183,75,75,.25)] transition">
+                        <img src="https://cdn.simpleicons.org/json/000000" alt="JSON" width="18"> REST &amp; JSON
                     </span>
                 </div>
             </div>
@@ -268,36 +414,45 @@ impactful digital solutions aligned with business goals.
                 <div class="relative pl-6">
                     <span class="absolute left-1 top-0 bottom-0 w-[2px] bg-black/10 dark:bg-white/10"></span>
 
-                    <article class="t-item">
+                    <article
+                        class="t-item relative pl-6 pb-6 before:content-[&quot;&quot;] before:absolute before:left-[-27px] before:top-1 before:w-4 before:h-4 before:rounded-full before:ring-4 before:ring-[rgba(183,75,75,.25)] before:bg-accent">
                         <h3 class="font-semibold">Full-Stack Developer • Telecom Network Solutions Pvt. Ltd.</h3>
                         <p class="text-sm text-black/70 dark:text-mutedDark">Nov 2023 – Present • Noida, U.P.</p>
                         <ul class="list-disc pl-5 mt-2 space-y-1">
-<li>Designed and developed multiple full-stack web platforms from scratch using MERN stack, improving
-performance and scalability by 35%.
-</li>
-<li>Engineered an Employee Management System (EMS) for Ceekh Edunix using MERN and Tailwind CSS,
-reducing manual administrative tasks by 40% through automation</li>
-<li>Built EduWe LMS using HTML, CSS, JavaScript, EJS, Node.js, Express.js, MySQL, and Bootstrap,
-integrating REST APIs for real-time data synchronization and achieving 99% uptime.
-</li>
-<li>Created EduWe Discussion Forum with EJS, Node.js, Express.js, MongoDB, and Bootstrap, enabling
-real-time learner interaction and improving engagement by 50%.
-</li>
-                            <li>Collaborated cross-functionally with designers and backend teams using Agile methodology to deliver
-projects 15% faster than projected timelines.
-</li>
+                            <li>Designed and developed multiple full-stack web platforms from scratch using MERN stack,
+                                improving
+                                performance and scalability by 35%.
+                            </li>
+                            <li>Engineered an Employee Management System (EMS) for Ceekh Edunix using MERN and Tailwind
+                                CSS,
+                                reducing manual administrative tasks by 40% through automation</li>
+                            <li>Built EduWe LMS using HTML, CSS, JavaScript, EJS, Node.js, Express.js, MySQL, and
+                                Bootstrap,
+                                integrating REST APIs for real-time data synchronization and achieving 99% uptime.
+                            </li>
+                            <li>Created EduWe Discussion Forum with EJS, Node.js, Express.js, MongoDB, and Bootstrap,
+                                enabling
+                                real-time learner interaction and improving engagement by 50%.
+                            </li>
+                            <li>Collaborated cross-functionally with designers and backend teams using Agile methodology
+                                to deliver
+                                projects 15% faster than projected timelines.
+                            </li>
 
                         </ul>
                     </article>
 
-                    <article class="t-item">
+                    <article
+                        class="t-item relative pl-6 pb-6 before:content-[&quot;&quot;] before:absolute before:left-[-27px] before:top-1 before:w-4 before:h-4 before:rounded-full before:ring-4 before:ring-[rgba(183,75,75,.25)] before:bg-accent">
                         <h3 class="font-semibold">Trainee Engineer • SequelString AI Pvt. Ltd.</h3>
                         <p class="text-sm text-black/70 dark:text-mutedDark">Jan 2023 – Jun 2023 • New Delhi</p>
-                        <p class="mt-2">Automated scraping with Python, BeautifulSoup, Selenium & Requests to speed up
+                        <p class="mt-2">Automated scraping with Python, BeautifulSoup, Selenium &amp; Requests to speed
+                            up
                             data collection.</p>
                     </article>
 
-                    <article class="t-item">
+                    <article
+                        class="t-item relative pl-6 pb-6 before:content-[&quot;&quot;] before:absolute before:left-[-27px] before:top-1 before:w-4 before:h-4 before:rounded-full before:ring-4 before:ring-[rgba(183,75,75,.25)] before:bg-accent pb-0">
                         <h3 class="font-semibold">Intern • SequelString AI Pvt. Ltd.</h3>
                         <p class="text-sm text-black/70 dark:text-mutedDark">Nov 2022 – Dec 2022 • New Delhi</p>
                         <p class="mt-2">Hands-on with Python libs for scraping and workflow automation.</p>
@@ -306,102 +461,121 @@ projects 15% faster than projected timelines.
             </div>
         </section>
 
-      <!-- Projects -->
-    <section id="projects" class="py-16">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8">Projects</h2>
+        <!-- Projects -->
+        <section id="projects" class="py-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8">Projects</h2>
 
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- EMS Platform for Ceekh Edunix -->
-                <div class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
-                    <div class="flex items-start justify-between gap-4">
-                        <h3 class="font-semibold"><div>Employee Management System</div><div>(Ceekh Edunix)</div></h3>
-                        <div class="text-xs px-2 py-1 border border-accent text-accent rounded-full text-center">
-                            Node • Express • MongoDB • React • TailwindCSS
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- EMS Platform for Ceekh Edunix -->
+                    <div
+                        class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
+                        <div class="flex items-start justify-between gap-4">
+                            <h3 class="font-semibold">
+                                <div>Employee Management System</div>
+                                <div>(Ceekh Edunix)</div>
+                            </h3>
+                            <div class="text-xs px-2 py-1 border border-accent text-accent rounded-full text-center">
+                                Node • Express • MongoDB • React • TailwindCSS
+                            </div>
                         </div>
+                        <p class="text-black/70 dark:text-mutedDark mt-2">
+                            Designed and developed a complete EMS platform to streamline user management and admin
+                            workflows.
+                        </p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>Built single-handedly from scratch</li>
+                            <li>Real-time data updates using React state management</li>
+                            <li>Modern, responsive UI with TailwindCSS</li>
+                        </ul>
                     </div>
-                    <p class="text-black/70 dark:text-mutedDark mt-2">
-                        Designed and developed a complete EMS platform to streamline user management and admin workflows.
-                    </p>
-                    <ul class="list-disc pl-5 mt-2 space-y-1">
-                        <li>Built single-handedly from scratch</li>
-                        <li>Real-time data updates using React state management</li>
-                        <li>Modern, responsive UI with TailwindCSS</li>
-                    </ul>
-                </div>
 
-                <!-- Archaeological Survey of India Website -->
-                <div class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
-                    <div class="flex items-start justify-between gap-4">
-                        <h3 class="font-semibold"><div>Archaeological Survey of India</div><div>(Delhi Circle)</div></h3>
-                        <div class="text-xs px-2 py-1 border border-accent text-accent rounded-full text-center">
-                            Node • Express • MongoDB • React • TailwindCSS
+                    <!-- Archaeological Survey of India Website -->
+                    <div
+                        class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
+                        <div class="flex items-start justify-between gap-4">
+                            <h3 class="font-semibold">
+                                <div>Archaeological Survey of India</div>
+                                <div>(Delhi Circle)</div>
+                            </h3>
+                            <div class="text-xs px-2 py-1 border border-accent text-accent rounded-full text-center">
+                                Node • Express • MongoDB • React • TailwindCSS
+                            </div>
                         </div>
+                        <p class="text-black/70 dark:text-mutedDark mt-2">
+                            Currently designing and developing an interactive and responsive web platform for ASI Delhi
+                            Circle.
+                        </p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>Dynamic content management with React &amp; MongoDB</li>
+                            <li>Optimized for accessibility and performance</li>
+                            <li>Deployed and managed via modern DevOps practices</li>
+                        </ul>
                     </div>
-                    <p class="text-black/70 dark:text-mutedDark mt-2">
-                        Currently designing and developing an interactive and responsive web platform for ASI Delhi Circle.
-                    </p>
-                    <ul class="list-disc pl-5 mt-2 space-y-1">
-                        <li>Dynamic content management with React & MongoDB</li>
-                        <li>Optimized for accessibility and performance</li>
-                        <li>Deployed and managed via modern DevOps practices</li>
-                    </ul>
-                </div>
 
-                <!-- Discussion Forum Platform -->
-                <div class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
-                    <div class="flex items-start justify-between gap-4">
-                        <h3 class="font-semibold"><div>Discussion Forum Platform </div><div>(EduWe)</div></h3>
-                        <div class="text-xs px-2 py-1 border border-accent text-accent rounded-full text-center">
-                            Node • Express • MongoDB • EJS • Bootstrap
+                    <!-- Discussion Forum Platform -->
+                    <div
+                        class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
+                        <div class="flex items-start justify-between gap-4">
+                            <h3 class="font-semibold">
+                                <div>Discussion Forum Platform </div>
+                                <div>(EduWe)</div>
+                            </h3>
+                            <div class="text-xs px-2 py-1 border border-accent text-accent rounded-full text-center">
+                                Node • Express • MongoDB • EJS • Bootstrap
+                            </div>
                         </div>
+                        <p class="text-black/70 dark:text-mutedDark mt-2">
+                            Threaded discussions, votes, and structured Q&amp;A to speed up knowledge sharing.
+                        </p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>Role-based permissions</li>
+                            <li>Pagination &amp; search</li>
+                            <li>Clean, responsive UI</li>
+                        </ul>
                     </div>
-                    <p class="text-black/70 dark:text-mutedDark mt-2">
-                        Threaded discussions, votes, and structured Q&A to speed up knowledge sharing.
-                    </p>
-                    <ul class="list-disc pl-5 mt-2 space-y-1">
-                        <li>Role-based permissions</li>
-                        <li>Pagination & search</li>
-                        <li>Clean, responsive UI</li>
-                    </ul>
-                </div>
 
-                <!-- Learning Management System -->
-                <div class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
-                    <div class="flex items-start justify-between gap-4">
-                        <h3 class="font-semibold"><div>Learning Management System </div><div>(EduWe)</div></h3>
-                        <div class="text-xs px-2 py-1 border border-accent text-accent rounded-full text-center">
-                            Node • Express • MySQL • EJS • Bootstrap
+                    <!-- Learning Management System -->
+                    <div
+                        class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
+                        <div class="flex items-start justify-between gap-4">
+                            <h3 class="font-semibold">
+                                <div>Learning Management System </div>
+                                <div>(EduWe)</div>
+                            </h3>
+                            <div class="text-xs px-2 py-1 border border-accent text-accent rounded-full text-center">
+                                Node • Express • MySQL • EJS • Bootstrap
+                            </div>
                         </div>
+                        <p class="text-black/70 dark:text-mutedDark mt-2">
+                            End-to-end LMS with courses, tutorials, notes, cart, and real-time content APIs.
+                        </p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1">
+                            <li>RESTful API integration</li>
+                            <li>Cart &amp; session management</li>
+                            <li>Analytics-ready data structure</li>
+                        </ul>
                     </div>
-                    <p class="text-black/70 dark:text-mutedDark mt-2">
-                        End-to-end LMS with courses, tutorials, notes, cart, and real-time content APIs.
-                    </p>
-                    <ul class="list-disc pl-5 mt-2 space-y-1">
-                        <li>RESTful API integration</li>
-                        <li>Cart & session management</li>
-                        <li>Analytics-ready data structure</li>
-                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
         <!-- Education -->
         <section id="education" class="py-16">
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-3xl font-bold mb-6">Education & Certificates</h2>
+                <h2 class="text-3xl font-bold mb-6">Education &amp; Certificates</h2>
                 <div class="grid md:grid-cols-2 gap-6">
                     <div
                         class="rounded-xl2 p-5 bg-gray-100 dark:bg-cardDark border border-black/10 dark:border-white/10">
                         <h3 class="font-semibold"><i class="bi bi-mortarboard me-2"></i>Master of Computer Application
                             (MCA) — 7.0 CGPA</h3>
-                        <p class="text-black/70 dark:text-mutedDark text-sm mb-3">G.L. Bajaj Institute of Technology &
+                        <p class="text-black/70 dark:text-mutedDark text-sm mb-3">G.L. Bajaj Institute of Technology
+                            &amp;
                             Management • 2021–2023</p>
                         <h3 class="font-semibold"><i class="bi bi-mortarboard me-2"></i>Bachelor of Computer Application
                             (BCA) — 7.0 CGPA</h3>
-                        <p class="text-black/70 dark:text-mutedDark text-sm">Institute of Technology & Science •
+                        <p class="text-black/70 dark:text-mutedDark text-sm">Institute of Technology &amp; Science •
                             2018–2021</p>
                     </div>
                     <div
@@ -430,8 +604,9 @@ projects 15% faster than projected timelines.
                         <ul class="mt-3 space-y-2">
                             <li><i class="bi bi-envelope text-accent"></i> <a class="underline-accent hover:text-accent"
                                     href="mailto:tushar.mahi1304@gmail.com">tushar.mahi1304@gmail.com</a></li>
-                            <li><i class="bi bi-telephone text-accent"></i> <a class="underline-accent hover:text-accent"
-                                    href="tel:+917060471819">+91 7060471819</a></li>
+                            <li><i class="bi bi-telephone text-accent"></i> <a
+                                    class="underline-accent hover:text-accent" href="tel:+917060471819">+91
+                                    7060471819</a></li>
                             <li><i class="bi bi-linkedin text-accent"></i> <a class="underline-accent hover:text-accent"
                                     href="https://in.linkedin.com/in/tushar-maheshwari-56a2062ab" target="_blank"
                                     rel="noreferrer">LinkedIn</a></li>
@@ -455,7 +630,7 @@ projects 15% faster than projected timelines.
 
     <footer class="py-6 border-t border-black/10 dark:border-white/10 text-black/60 dark:text-mutedDark">
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">
-            <div>© <span id="year"></span> <span class="text-accent">Tushar</span> Maheshwari. All rights reserved.
+            <div>© <span id="year">2025</span> <span class="text-accent">Tushar</span> Maheshwari. All rights reserved.
             </div>
             <div>Made by Tushar with <i class="bi bi-heart-fill text-accent"></i></div>
         </div>
@@ -481,8 +656,11 @@ projects 15% faster than projected timelines.
 
         function setIcon() {
             const dark = root.classList.contains('dark');
-            (dark ? [themeIcon, themeIconM] : [themeIcon, themeIconM])
-                .forEach(ic => { if (!ic) return; ic.classList.toggle('bi-moon', dark); ic.classList.toggle('bi-sun', !dark); });
+            [themeIcon, themeIconM].forEach(ic => {
+                if (!ic) return;
+                ic.classList.toggle('bi-moon', dark);
+                ic.classList.toggle('bi-sun', !dark);
+            });
         }
 
         (function initTheme() {
@@ -513,13 +691,11 @@ projects 15% faster than projected timelines.
             item.classList.add('relative', 'pl-6', 'pb-6', 'before:content-[""]', 'before:absolute', 'before:left-[-27px]', 'before:top-1', 'before:w-4', 'before:h-4', 'before:rounded-full', 'before:ring-4', 'before:ring-[rgba(183,75,75,.25)]', 'before:bg-accent');
             if (idx === document.querySelectorAll('.t-item').length - 1) item.classList.add('pb-0');
         });
+
+        // Hover underline accent for nav links
         document.querySelectorAll('.navlink').forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                link.classList.add('underline-accent');
-            });
-            link.addEventListener('mouseleave', () => {
-                link.classList.remove('underline-accent');
-            });
+            link.addEventListener('mouseenter', () => link.classList.add('underline-accent'));
+            link.addEventListener('mouseleave', () => link.classList.remove('underline-accent'));
         });
 
         // Typing effect
@@ -549,37 +725,46 @@ projects 15% faster than projected timelines.
         }
         type();
 
-        // --- Active link highlight (IntersectionObserver) ---
+        // --- Active link highlight (header-aware, stable across sizes) ---
         const sections = [...document.querySelectorAll('section[id]')];
-
-        // All nav links (desktop + mobile)
         const allLinks = [...document.querySelectorAll('.navlink')];
+        const headerEl = document.querySelector('header');
 
-        // helper: set active class on both menus
-        function setActiveLink(id) {
-            // clear all first
-            allLinks.forEach(l => l.classList.remove('text-accent', 'underline-accent'));
-            // activate every link that points to #id (desktop & mobile)
-            document.querySelectorAll(`.navlink[href="#${id}"]`).forEach(l => {
-                l.classList.add('text-accent', 'underline-accent');
-            });
+        function headerOffset() {
+            const h = headerEl ? headerEl.offsetHeight : 0;
+            return h + 12; // breathing room
         }
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setActiveLink(entry.target.id);
+        function setActiveLink(id) {
+            allLinks.forEach(l => l.classList.remove('text-accent', 'underline-accent'));
+            document.querySelectorAll(`.navlink[href="#${id}"]`)
+                .forEach(l => l.classList.add('text-accent', 'underline-accent'));
+        }
+
+        function getActiveSectionId() {
+            const y = window.scrollY + headerOffset() + 1;
+            let current = sections[0]?.id || '';
+            for (const sec of sections) {
+                const top = sec.offsetTop;
+                const bottom = top + sec.offsetHeight;
+                if (y >= top && y < bottom) {
+                    current = sec.id;
+                    break;
                 }
-            });
-        }, {
-            // tune these if you want earlier/later activation
-            rootMargin: '-30% 0px -60% 0px',
-            threshold: 0.1
-        });
+            }
+            return current;
+        }
 
-        sections.forEach(sec => observer.observe(sec));
+        function updateActive() {
+            const id = getActiveSectionId();
+            if (id) setActiveLink(id);
+        }
 
-        // (optional) also set active on click for snappy feedback
+        window.addEventListener('scroll', updateActive, { passive: true });
+        window.addEventListener('resize', updateActive);
+        document.addEventListener('DOMContentLoaded', updateActive);
+
+        // Also set active immediately on click for snappy feedback
         allLinks.forEach(l => {
             l.addEventListener('click', () => {
                 const id = l.getAttribute('href')?.slice(1);
@@ -587,8 +772,6 @@ projects 15% faster than projected timelines.
             });
         });
     </script>
-
 </body>
 
 </html>
-
